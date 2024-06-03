@@ -92,7 +92,7 @@ export default function RoleForm2() {
         const value = e.getAttribute("data-value") as any;
         data.push(JSON.parse(value))
       });
-      const flatmap = memoFormPermission && [...memoFormPermission, ...data].flatMap((i) => i);
+      const flatmap = memoFormPermission ? [...memoFormPermission, ...data].flatMap((i) => i) : [...data];
       form.setValue("permissions", flatmap);
       setCheckedMethods([...checkedMethods, m]);
     } else {

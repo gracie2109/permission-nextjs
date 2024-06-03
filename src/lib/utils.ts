@@ -79,11 +79,11 @@ export function matchingTwoObject(obj1: any, ob2: any): any[] {
 
 
 export function getUniquePermissions(array1: any, array2: any) {
-    if(!(array1 || array2)) return [];
-    const setA = new Set(array1.map((item: any) => item._id));
-    const uniqueElements = array2.filter((item: any) => {
-        if (!setA.has(item._id)) {
-            setA.add(item.name);
+    if(!(array1 && array2)) return [];
+    const setA = new Set(array1?.map((item: any) => item?._id));
+    const uniqueElements = array2?.filter((item: any) => {
+        if (!setA.has(item?._id)) {
+            setA.add(item?.name);
             return item;
         }
     });
